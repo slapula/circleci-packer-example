@@ -1,5 +1,5 @@
 #!/bin/bash
-IMAGE_YML=images.yml
+IMAGE_YML=manifest.json
 ROOT_DIR=$(git rev-parse --show-toplevel)
 
 set -x

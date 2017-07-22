@@ -1,7 +1,7 @@
 machine:
   environment:
-    GIT_USER_EMAIL: you@example.org
-    GIT_USER_NAME: you
+    GIT_USER_EMAIL: ajsmith10381@gmail.com
+    GIT_USER_NAME: slapula
     PATH: "${HOME}/bin:${PATH}"
 
 dependencies:
@@ -21,5 +21,5 @@ deployment:
   packer:
     branch: master
     commands:
-      - ./ci/packer-build.sh
+      - packer build packer/builder.json
       - ./ci/push_to_github.sh
