@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 CIRCLECI_CACHE_DIR="${HOME}/bin"
-PACKER_VERSION="1.0.1"
-PACKER_CHECKSUM="456e6245ea95705191a64e0556d7a7ecb7db570745b3b4b2e1ebf92924e9ef95"
+PACKER_VERSION="1.0.3"
+PACKER_CHECKSUM="0e10169ef9cf3fd55dcc9dc213b9995170f7712e8a162ca2f5109d62bfbe7529"
 PACKER_URL="https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip"
 
 if [ ! -f "${CIRCLECI_CACHE_DIR}/packer" ] || [[ ! "$(packer version)" =~ "Packer v${PACKER_VERSION}" ]]; then
