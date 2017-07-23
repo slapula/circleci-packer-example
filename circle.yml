@@ -22,4 +22,4 @@ deployment:
     branch: master
     commands:
       - packer build packer/builder.json
-      - ./ci/push_to_github.sh
+      - ./ci/push_to_terraform.sh
