@@ -9,6 +9,8 @@ cd terraform-circleci-example
 
 sed -i.bak "s/\basg_instance_ami.*\b/asg_instance_ami = \"${NEW_AMI}/g" stacks/staging/terraform.tfvars 
 
+cat stacks/staging/terraform.tfvars
+
 if ! git diff --quiet stacks/staging/terraform.tfvars; then
   git add --all
   git commit -m "images: Updated by CircleCI [ci skip]"
