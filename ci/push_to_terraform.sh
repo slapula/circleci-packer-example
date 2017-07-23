@@ -8,12 +8,11 @@ git clone git@github.com:slapula/terraform-circleci-example.git
 cd terraform-circleci-example
 
 sed -i.bak "s/\basg_instance_ami.*\b/asg_instance_ami = \"${NEW_AMI}/g" stacks/staging/terraform.tfvars 
+sed -i.bak "s/\basg_instance_ami.*\b/asg_instance_ami = \"${NEW_AMI}/g" stacks/production/terraform.tfvars
 
-cat stacks/staging/terraform.tfvars
-
-if ! git diff --quiet stacks/staging/terraform.tfvars; then
+if ! git diff --quiet; then
   git add --all
-  git commit -m "images: Updated by CircleCI [ci skip]"
+  git commit -m "AMIs: Updated by CircleCI [ci skip]"
   git push origin HEAD:${CIRCLE_BRANCH}
 else
   echo "No changes committed."
